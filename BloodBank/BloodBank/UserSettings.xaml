@@ -1,0 +1,101 @@
+﻿<Page x:Class="BloodBank.UserSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BloodBank"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1250"
+      Title="UserSettings">
+    <Page.Resources>
+        <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="18">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid Width="auto" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 600 0">
+            <Grid Width="150" HorizontalAlignment="Left">
+                <Label Content="Type of user :" FontSize="18" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 15 0 15"/>
+                <Label Content="Name :" FontSize="18" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 70 0 15"/>
+                <Label Content="Phone number :" FontSize="18" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 125 0 15"/>
+                <Label Content="Blood group :" FontSize="18" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 180 0 15"/>
+                <Label Content="Email :" FontSize="18" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 235 0 15"/>
+                <Label Content="Location :" FontSize="18" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 290 0 15"/>
+                <Label Content="City :" FontSize="18" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 345 0 15"/>
+            </Grid>
+            <Grid Margin="150 0 0 0" HorizontalAlignment="Left" Width="250">
+                <Label x:Name="typ" FontSize="18" Height="40" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 15 0 15"/>
+                <Label x:Name="name" FontSize="18" Height="40" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 70 0 15"/>
+                <Label x:Name="ph_No" FontSize="18" Height="40" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 125 0 15"/>
+                <Label x:Name="b_Grp" FontSize="18" Height="40" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 180 0 15"/>
+                <Label x:Name="email" FontSize="18" Height="40" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 235 0 15"/>
+                <Label x:Name="loc" FontSize="18" Height="40" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 290 0 15"/>
+                <Label x:Name="city" FontSize="18" Height="40" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 354 0 15"/>
+            </Grid>
+        </Grid>
+        <Grid Width="500" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="550 0 0 0">
+            <Button x:Name="chng_Loc_Button" Content="Change Location" Margin="0 20 0 0" Width="350" Height="32" HorizontalAlignment="Center" VerticalAlignment="Top" Click="changeLocation"/>
+            <Grid x:Name="chng_Loc_Grid" Width="450" Height="300" Margin="0 72 0 0" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Border Style="{x:Null}" BorderBrush="Black" BorderThickness="1" CornerRadius="20">
+                    <Grid Margin="80">
+                        <TextBox x:Name="new_Loc" Template="{StaticResource TextBoxBaseControlTemplate}" Style="{x:Null}" Height="35" Width="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="16" Foreground="Gray" GotKeyboardFocus="new_Loc_GotKeyboardFocus" LostKeyboardFocus="new_Loc_LostKeyboardFocus">New location</TextBox>
+                        <Label x:Name="emptyLoc" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 46 0 0" FontSize="16" Foreground="Red" Visibility="Collapsed">Enter a location</Label>
+                        <Button x:Name="new_LocButton" Content="SUBMIT" Width="100" Margin="0 60 0 0" Background="#ff9e22" BorderThickness="1" BorderBrush="Gray" Click="new_LocButton_Click"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Button x:Name="chng_City_Button" Content="Change City" Margin="0 72 0 0" Width="350" Height="32" HorizontalAlignment="Center" VerticalAlignment="Top" Click="changeCity"/>
+            <Grid x:Name="chng_City_Grid" Width="450" Height="300" Margin="0 124 0 0" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Border Style="{x:Null}" BorderBrush="Black" BorderThickness="1" CornerRadius="20">
+                    <Grid Margin="80">
+                        <TextBox x:Name="new_City" Template="{StaticResource TextBoxBaseControlTemplate}" Style="{x:Null}" Height="35" Width="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="16" Foreground="Gray" GotKeyboardFocus="new_City_GotKeyboardFocus" LostKeyboardFocus="new_City_LostKeyboardFocus">New city</TextBox>
+                        <Label x:Name="emptyCity" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 46 0 0" FontSize="16" Foreground="Red" Visibility="Hidden">Enter a city</Label>
+                        <Button x:Name="new_CityButton" Content="SUBMIT" Width="100" Margin="0 60 0 0" Background="#ff9e22" BorderThickness="1" BorderBrush="Gray" Click="new_CityButton_Click"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Button x:Name="chng_Password_Button" Content="Change Password" Margin="0 124 0 20" Width="350" Height="32" HorizontalAlignment="Center" VerticalAlignment="Top" Click="changePassword"/>
+            <Grid x:Name="chng_Password_Grid" Width="450" Height="300" Margin="0 176 0 0" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Border Style="{x:Null}" BorderBrush="Black" BorderThickness="1" CornerRadius="20">
+                    <Grid Margin="40">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Grid Height="35" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29 5 0 0">
+                                <Label Margin="5 0" HorizontalAlignment="Left" VerticalAlignment="Center">Old password : </Label>
+                                <PasswordBox x:Name="old_Pass" Style="{x:Null}" Height="35" Width="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96 0 0 0" FontSize="16"/>
+                            </Grid>
+                            <Grid Height="35" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24 50 5 5">
+                                <Label Margin="5 0" HorizontalAlignment="Left" VerticalAlignment="Center">New password : </Label>
+                                <PasswordBox x:Name="new_Pass" Style="{x:Null}" Height="35" Width="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102 0 0 0" FontSize="16"/>
+                            </Grid>
+                            <Grid Height="35" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5 95 5 5">
+                                <Label Margin="5 0" HorizontalAlignment="Left" VerticalAlignment="Center">Confirm password : </Label>
+                                <PasswordBox x:Name="confirm_Pass" Style="{x:Null}" Height="35" Width="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120 0 0 0" FontSize="16"/>
+                            </Grid>
+                        </Grid>
+                        <Label x:Name="emptyPassword" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 137 0 0" FontSize="16" Foreground="Red" Visibility="Hidden">All fields must be filled</Label>
+                        <Label x:Name="invalidOldPassword" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 137 0 0" FontSize="16" Foreground="Red" Visibility="Hidden">Invalid old password</Label>
+                        <Label x:Name="PasswordNotMatching" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 137 0 0" FontSize="16" Foreground="Red" Visibility="Hidden">Passwords do not match</Label>
+                        <Button x:Name="new_PassButton" Content="SUBMIT" Width="100" Margin="0 175 0 5" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#ff9e22" BorderThickness="1" BorderBrush="Gray" Click="new_PassButton_Click"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
