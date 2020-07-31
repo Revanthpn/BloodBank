@@ -9,7 +9,7 @@ The ‘BLOOD BANK MANAGEMENT SYSTEM’ project is to interconnect all the blood 
 ![Image of ER-Diagram](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/ER-diagram.PNG)
 
 ## ER_Mapping
-![Image of ER-Diagram](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/ER-Mapping.PNG)
+![Image of ER-Mapping](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/ER-Mapping.PNG)
 
 ## Connecting to a SQLITE database
 Install-Package System.Data.SQLite -Version 3 
@@ -40,3 +40,25 @@ In this module we can see the donor details of when he/she donates the blood and
 Here we can get a details of orders like donation, receiving the blood and their prices with respective dates.
 ### *Stock details
 Here in this module we can get in which medical institutes how much stock of blood is there.
+
+## Snapshots
+### Login Page for Donor, Recipient or Medical Institute users
+![Image of screen1](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen1.PNG)
+### Registration page for Donor or Recipients
+![Image of screen2](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen2.PNG)
+### Registration page for Medical Institutes
+![Image of screen3](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen3.PNG)
+### Home page for Donors
+![Image of screen4](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen4.PNG)
+### Home page for Recipients
+![Image of screen5](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen5.PNG)
+### View Blood Requests for Donors
+![Image of screen6](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen6.PNG)
+### Blood Request Page for Recipients
+![Image of screen7](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen7.PNG)
+### Extra details registration page for recipients
+![Image of screen8](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen8.PNG)
+### Blood Stock details column page for Blood Banks
+![Image of screen9](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen9.PNG)
+### Settings page to Users to change their location, city and also the password
+![Image of screen10](https://github.com/Revanthpn/BloodBank/blob/master/BloodBank/BloodBank/Resources/screen10.PNG)
