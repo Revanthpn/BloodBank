@@ -6,7 +6,7 @@ Every year our nation requires about 4 Cr. units of blood, out of which only 5 L
 The ‘BLOOD BANK MANAGEMENT SYSTEM’ project is to interconnect all the blood banks, hospitals, donors into a single network, validation, store various data and information of blood of each individual. This system is used to store data over a centralized server which consists of database where the individual’s information cannot be accessed by a third party.
 #### *Front-End Tool
 **C#:** C# (pronounced "C-sharp") is an object-oriented programming language from Microsoft that aims to combine the computing power of C++ with the programming ease of Visual Basic. C# is based on C++ and contains features similar to those of Java. C# is designed to work with Microsoft's .Net platform.
-#### *Bach-End Tool
+#### *Back-End Tool
 **Sqlite:** Sqlite is an in-process library that implements a self-contained, zero-configuration, server less, transactional SQL database engine. The source code for Sqlite exists in the public domain and is free for both private and commercial purposes.
 
 ## ER-Diagram
