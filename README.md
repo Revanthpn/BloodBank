@@ -14,7 +14,7 @@ The ‘BLOOD BANK MANAGEMENT SYSTEM’ project is to interconnect all the blood 
 ## Connecting to a SQLITE database
 Install-Package System.Data.SQLite -Version 3 
 https://www.nuget.org/packages/System.Data.SQLite
-```c#
+```
 using(SQLiteConnection con= new SQLiteConnection(@"Data Source=D:\test.db;"))
     {
         conn.Open();
