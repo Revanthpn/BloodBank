@@ -15,13 +15,13 @@ The ‘BLOOD BANK MANAGEMENT SYSTEM’ project is to interconnect all the blood 
 Install-Package System.Data.SQLite -Version 3 
 https://www.nuget.org/packages/System.Data.SQLite
 ```c#
-using(SQLiteConnection con= new SQLiteConnection(@"Data Source=D:\test.db;")
-{
-    conn.Open();
-    SQLiteCommand command = new SQLiteCommand("Select * from yourTable", conn);
-    SQLiteDataReader reader = command.ExecuteReader();
-    while (reader.Read())
-    Console.WriteLine(reader["YourColumn"]);
-    reader.Close();
-}
+using(SQLiteConnection con= new SQLiteConnection(@"Data Source=D:\test.db;"))
+    {
+        conn.Open();
+        SQLiteCommand command = new SQLiteCommand("Select * from yourTable", conn);
+        SQLiteDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        Console.WriteLine(reader["YourColumn"]);
+        reader.Close();
+    }
 ```
