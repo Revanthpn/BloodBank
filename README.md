@@ -25,3 +25,18 @@ using(SQLiteConnection con= new SQLiteConnection(@"Data Source=D:\test.db;"))
         reader.Close();
     }
 ```
+## Module Descrption
+1. Login
+In the login module there are two labels inside the textbooks namely email-id and password and an arrow button that leads the user to the next event searching page. The user has to enter the email-id and the password to login.
+2. User Registration      
+In user registration page user has to give the information to register to this database application. The information user has to give like name, phone number, address, email etc...,
+3. Medical Institutes Registration
+In medical institutes registration page medical institutes can register to this application for sharing blood related information and to search blood if it required. The medical institutes like blood banks or hospitals. 
+4. Medical institutes details
+In this page the user can see which medical institutes are register to this application and he can visit to nearby medical institutes and he can donate blood or he can receives blood if its emergency.
+5. Donor details
+In this module we can see the donor details of when he/she donates the blood and blood group and in which medical institutes the donated also we can get.
+6. Orders details
+Here we can get a details of orders like donation, receiving the blood and their prices with respective dates.
+7. Stock details
+Here in this module we can get in which medical institutes how much stock of blood is there.
